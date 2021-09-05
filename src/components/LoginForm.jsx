@@ -25,13 +25,14 @@ const LoginForm = () => {
 
       window.location.reload();
     } catch (error) {
-      setError('Oops, something wrong!');
+      setError('Oops, Incorrect credentials!');
     }
   };
 
   return (
     <div className="wrapper">
       <div className="form">
+        
         <h1 className="title">Chat Application</h1>
         <form onSubmit={handleSubmit}>
           <input
@@ -56,7 +57,10 @@ const LoginForm = () => {
             </button>
           </div>
         </form>
-        <h1>{error}</h1>
+
+        <h3 style={{ textAlign: 'center', marginTop: '10px', color: '#222'}}>Please use this account to login</h3>
+        <h5 style={{ textAlign: 'center', marginTop: '10px', color: '#222'}}>Account: guest, password: guest</h5>
+        <h2 style={{ textAlign: 'center', marginTop: '15px', color: '#520'}}>{error}</h2>
       </div>
     </div>
   );
